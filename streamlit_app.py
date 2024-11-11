@@ -5,6 +5,11 @@ This application allows users to upload a PDF, process it,
 and then ask questions about the content using a selected language model.
 """
 
+
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import streamlit as st
 import logging
 import os
